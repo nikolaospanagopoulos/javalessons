@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Main {
@@ -36,13 +37,13 @@ public class Main {
         System.out.println("grade: "+grade);
 
         System.out.println("------------------------------------------------------------------");
-        
+
         String myText = "text";
         String myText2 = "text text text";
         //System.out.println(myText == myText2);
 
         System.out.println("strings have the same content: "+myText.equals(myText2));
-        
+
         String greeting = new String("hello");
 
         String name = "Nikos";
@@ -81,16 +82,59 @@ public class Main {
         String modified = original.replace('a', 'o');
         System.out.println(modified);
 
-        // write a program that takes a string and prints its length
+        System.out.println("----------------------Exercises----------------------------------------");
 
-        // write a program that prints first and last chars of a string
+        // write a function that takes a string and returns  its length
+        //public static int calculateStringLength(String str){}
+        System.out.println("1 ex");
+        String  word = "A String";
+        System.out.println("Length of the string: " + word.length());
 
-        //write a program that checks if two strings are equal in terms of content
+        // write a function that prints and returns first and last chars of a string
 
-        //"hello world" -> replace world with your name
+        System.out.println("2 ex");
+        String firstandlast = "First and last";
+        System.out.println("First and last chars of the string: " + firstandlast.substring(0,1) + firstandlast.substring(13,14));
+
+        //System.out.println("first and last chars of the string are: "+firstandlast.split("")[0]+firstandlast.split("")[firstandlast.length()-1]);
+        System.out.println("first and last chars of the string are: "+firstandlast.charAt(0)+" "+firstandlast.charAt(firstandlast.length()-1));
+
+        //write a function that checks if two strings are equal in terms of content and return (true, false)
+
+        System.out.println("3 ex");
+        String firststring = "hello";
+        String secondstring = "hello hello";
+        System.out.println("Two strings equals in terms of content: " + firststring.equals(secondstring));
+
+        //"hello world" -> replace world with your name and return it
+
+        System.out.println("4 ex");
+        String helloworld = "hello world";
+        String myname = "Myrto";
+        String hello = helloworld.substring(0,6);
+        System.out.println("Replacing world with my name: " + hello + myname);
+        System.out.println("Replacing world with my name: "+helloworld.replace("world","Nikos"));
 
         // extra -> (a, e, i, o, u)  -> count vowels -> tip use loop
+        // write a function that calculates how many vowels are in a string and returns result
+        //public static int countVowels(String str){}
 
+        String toCountVowels = "hEllo world1234";
+        System.out.println("Extra ex");
+        int result = 0;
+        toCountVowels = toCountVowels.toLowerCase();
+        for ( int i =0; i < toCountVowels.length(); i++) {
+            if(Character.isLetter(toCountVowels.charAt(i))){
+                if (toCountVowels.charAt(i) == 'a'  || toCountVowels.charAt(i) == 'e'  || toCountVowels.charAt(i) == 'i'  || toCountVowels.charAt(i) == 'o'   ||toCountVowels.charAt(i) == 'u'  ) {
+                    //auth einai h logikh mou alla den kserw akrivws poia sunarthsh tha xreiastei gia to an oi xarakthres tou string isoutai me a,e,i,o,u
+                    //result = result + 1;
+                    //result +=1;
+                    result++;
+                }
+            }
+
+        }
+        System.out.println("The number of vowels is: " + result);
 
     }
 }
